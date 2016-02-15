@@ -1,0 +1,33 @@
+<div class="login-page">
+	<div class="login-container">
+		<div class="form" ng-init="isLoginForm=true">
+			<img class="header" src="images/header.png">
+			<form ng-if="!isLoginForm" class="register-form" name="registerForm">
+				<div class="form-group" show-errors>
+					<input type="text" class="form-control" name="username" ng-model="user.name" placeholder="name" required/>
+				</div>
+				<div class="form-group" show-errors>
+					<input type="password" class="form-control" name="password" placeholder="password" ng-model="user.password" required/>
+				</div>
+				<div class="form-group" show-errors>
+					<input type="email" class="form-control" name="email" placeholder="email address" ng-model="user.email" required/>
+				</div>
+				<button ng-click="register(registerForm.$valid)" >SIGN UP</button>
+				<p class="message" ><span>Already registered? <span><a ng-click="changeForm()">Sign In</a></p>
+			</form>
+			<form ng-if="isLoginForm" class="login-form" name="loginForm">
+				<div class="form-group" show-errors>
+					<input type="text" class="form-control" name="username" placeholder="username" ng-model="user.name" required/>
+				</div>
+				<div class="form-group" show-errors>
+					<input type="password" class="form-control" name="password" placeholder="password" ng-model="user.password" required/>
+				</div>
+				<button ng-click="login(loginForm.$valid)" >LOGIN</button>
+				<p class="message"><a>Forget Password?</a> <span> / <span><a ng-click="changeForm()">Create new Account</a></p>
+			</form>
+			<a href="">
+				<img class="logos" src="images/logos.png">
+			</a>
+		</div>
+</div>
+</div>
